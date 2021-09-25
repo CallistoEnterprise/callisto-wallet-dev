@@ -136,6 +136,38 @@
         <!-- / Data -->
 
     </section>
+
+    <a ng-click="showAdvanceNonce = !showAdvanceNonce"
+        ng-show='globalService.currentTab === globalService.tabs.sendTransaction.id'>
+        <p class="strong">
+            <span ng-show="showAdvanceNonce" class="glyphicon glyphicon-minus"></span>
+            <span ng-show="!showAdvanceNonce" class="glyphicon glyphicon-plus"></span>
+            <span>Advanced: Nonce
+        </span>
+        </p>
+    </a>
+
+    <section ng-show="showAdvanceNonce">
+        <!-- Data -->
+        <div class="row form-group">
+            <div class="col-sm-11 clearfix">
+          <span class="account-help-icon">
+            <img src="images/icon-help.svg" class="help-icon"/>
+            <p class="account-help-text">This field is optional, The nonce represents the number of transactions sent from a given address.</p>
+          </span>
+                <label > Nonce: </label>
+                <input type="text"
+                       class="form-control"
+                       placeholder=""
+                       ng-model="tx.nonce"
+                       name="nonce"
+                       ng-class="sendTransactionForm.nonce.$valid ? 'is-valid' : 'is-invalid'"/>
+            </div>
+        </div>
+        <!-- / Data -->
+
+    </section>
+
 </div>
 
 <!-- / Advanced Option Panel -->

@@ -22,6 +22,7 @@ const sendTxCtrl = function($scope, $sce, $rootScope, walletService) {
     walletService.wallet = null;
     walletService.password = "";
     $scope.showAdvance = $scope.showRaw = false;
+    $scope.showAdvanceNonce = false;
     $scope.dropdownEnabled = true;
     $scope.Validator = Validator;
     $scope.gasLimitChanged = false;

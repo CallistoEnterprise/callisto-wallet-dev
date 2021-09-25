@@ -23,6 +23,10 @@ module.exports = function sendTransactionForm(walletService, globalService) {
                 if (!val) return true;
                 return Validator.isValidHex(val);
             };
+            form.nonce.$validators.nonce = val => {
+                if (!val) return true;
+                return Validator.isValidNumber(val);
+            }
             form.gasLimit.$validators.gasLimit = form.value.$validators.value =
                 Validator.isPositiveNumber;
 

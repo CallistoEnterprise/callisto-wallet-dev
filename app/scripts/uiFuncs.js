@@ -18,7 +18,7 @@ const LedgerEth = require("@ledgerhq/hw-app-eth").default;
 
 const uiFuncs = function() {};
 uiFuncs.getTxData = function({
-    tx: { to = "", value = 0, unit = "ether", gasLimit = 21000, data = "" },
+    tx: { to = "", value = 0, unit = "ether", gasLimit = 21000, data = "", nonce=null },
     wallet
 }) {
     return {
@@ -27,6 +27,7 @@ uiFuncs.getTxData = function({
         unit,
         gasLimit,
         data,
+        nonce,
         gasPrice: globalFuncs.localStorage.getItem("gasPrice", 21), // gwei
         from: wallet.getChecksumAddressString(),
         privKey: wallet.privKey ? wallet.getPrivateKeyString() : "",

@@ -8,6 +8,7 @@ var offlineTxCtrl = function($scope, $sce, $rootScope, walletService) {
     $scope.unitReadable = ajaxReq.type;
     $scope.valueReadable = "";
     $scope.showAdvance = false;
+    $scope.showAdvanceNonce = false;
     $scope.dropdownEnabled = true;
     $scope.showRaw = false;
     $scope.showWalletInfo = false;
