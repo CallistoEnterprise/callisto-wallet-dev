@@ -141,12 +141,12 @@
     <article class="col-xs-12" ng-show="contract.selectedFunc!=null && visibility === 'interactView'">
 
         <button class="btn btn-primary btn-block" ng-click="readFromContract()"
-                ng-show="(contract.functions[contract.selectedFunc.index].constant || contract.functions[contract.selectedFunc.index].stateMutability === 'view') && showRead">
+                ng-show="(contract.functions[contract.selectedFunc.index].constant || ['view','pure'].includes(contract.functions[contract.selectedFunc.index].stateMutability)) && showRead">
             <span translate="CONTRACT_Read"> READ</span>
         </button>
 
         <button class="btn btn-primary btn-block" ng-click="writeToContract()"
-                ng-show="!(contract.functions[contract.selectedFunc.index].constant || contract.functions[contract.selectedFunc.index].stateMutability === 'view')">
+                ng-show="!(contract.functions[contract.selectedFunc.index].constant || ['view','pure'].includes(contract.functions[contract.selectedFunc.index].stateMutability))">
             <span translate="CONTRACT_Write"> WRITE</span>
         </button>
 

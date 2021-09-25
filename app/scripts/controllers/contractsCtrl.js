@@ -218,7 +218,7 @@ const contractsCtrl = function($scope, $sce, $rootScope, walletService) {
             selectedFunc: Object.assign({}, selectedFunc, { index })
         });
 
-        if (!($scope.contract.functions[index].stateMutability === 'view' || $scope.contract.functions[index].inputs.length)) {
+        if (!(['view','pure'].includes($scope.contract.functions[index].stateMutability) || $scope.contract.functions[index].inputs.length)) {
             $scope.readFromContract();
             $scope.showRead = false;
         } else $scope.showRead = true;
