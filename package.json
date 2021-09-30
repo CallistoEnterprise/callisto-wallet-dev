@@ -97,7 +97,7 @@
         "npm": "^6.14.13",
         "platform": "^1.3.6",
         "run-sequence": "^1.2.2",
-        "trezor-connect": "^7.0.1",
+        "trezor-connect": "^8.2.1",
         "vinyl-buffer": "^1.0.0",
         "vinyl-source-stream": "^1.1.0"
     },
