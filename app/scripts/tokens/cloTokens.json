@@ -22,5 +22,17 @@
         "symbol": "ccBNB",
         "decimal": 18,
         "type": "default"
+    },
+	{
+        "address": "0xbf6c50889d3a620eb42C0F188b65aDe90De958c4",
+        "symbol": "BUSDT",
+        "decimal": 18,
+        "type": "default"
+    },
+	{
+        "address": "0x9FaE2529863bD691B4A7171bDfCf33C7ebB10a65",
+        "symbol": "SOY",
+        "decimal": 18,
+        "type": "default"
     }
 ]
