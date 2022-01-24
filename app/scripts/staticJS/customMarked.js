@@ -1,5 +1,5 @@
 "use strict";
-var marked = require("marked");
+const { marked } = require('marked');
 var myRenderer = new marked.Renderer();
 myRenderer.paragraph = function(text) {
     return text + "\n";
