@@ -1,6 +1,10 @@
 "use strict";
 require("./localStoragePolyfill");
 require("babel-polyfill");
+if (location.protocol !== 'https:' && location.hostname != '127.0.0.1') {
+    // force SSL redirect
+    location.replace(`https:${location.href.substring(location.protocol.length)}`);
+}
 let IS_CX = false;
 if (typeof chrome != "undefined")
     IS_CX = chrome.windows === undefined ? false : true;
