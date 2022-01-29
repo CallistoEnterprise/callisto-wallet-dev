@@ -19,7 +19,19 @@
                      class="collapse-button glyphicon"
                      ng-class="wd ? 'glyphicon-plus' : 'glyphicon-minus'"
                  ></span>
-                <span
+                <span ng-if="ajaxReq.type == 'Testnet CLO' || ajaxReq.type == 'CLO'">
+                    Send and Stake CLO & Tokens
+                </span>
+                <span ng-if="ajaxReq.type == 'BTTC'">
+                    Send BTT & Tokens
+                </span>
+                <span ng-if="ajaxReq.type == 'ETC'">
+                    Send ETC & Tokens
+                </span>
+                <span ng-if="ajaxReq.type == 'BSC'">
+                    Send BNB & Tokens
+                </span>
+                <span ng-if="ajaxReq.type == 'ETH'"
                     translate="NAV_SendEther">
                     Send Ether &amp; Tokens
                 </span>

@@ -153,8 +153,18 @@
 
                 @@if (site === 'cew' ) {
                 <li ng-repeat="tab in tabNames track by $index" class="nav-item {{tab.name}}"
-                    ng-class="{active: $index==gService.currentTab}" ng-show="tab.mew" ng-click="tabClick($index)"><a
-                    tabindex="0" aria-label="nav item: {{tab.name | translate}}" translate="{{tab.name}}"></a></li>
+                    ng-class="{active: $index==gService.currentTab}" ng-show="tab.mew" ng-click="tabClick($index)">
+                    <a ng-if="tab.name == 'NAV_SendEther' && ajaxReq.type =='BSC'"
+                    tabindex="0" aria-label="nav item: {{tab.name | translate}}" >Send BNB & Tokens</a>
+                    <a ng-if="tab.name == 'NAV_SendEther' && ajaxReq.type =='BTTC'"
+                    tabindex="0" aria-label="nav item: {{tab.name | translate}}" >Send BTT & Tokens</a>
+                    <a ng-if="tab.name == 'NAV_SendEther' && (ajaxReq.type =='ETH' || ajaxReq.type == 'ETC')"
+                    tabindex="0" aria-label="nav item: {{tab.name | translate}}" >Send {{ajaxReq.type}} & Tokens</a>
+                    <a ng-if="tab.name == 'NAV_SendEther' && (ajaxReq.type =='CLO' || ajaxReq.type == 'Testnet CLO')"
+                    tabindex="0" aria-label="nav item: {{tab.name | translate}}" >Send and Stake CLO & Tokens</a>
+                    <a ng-if="tab.name != 'NAV_SendEther'"
+                    tabindex="0" aria-label="nav item: {{tab.name | translate}}" translate="{{tab.name}}"></a>
+                    </li>
                 }
                 @@if (site === 'cx' ) {
                 <li ng-repeat="tab in tabNames track by $index" class="nav-item {{tab.name}}"
