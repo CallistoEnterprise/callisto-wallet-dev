@@ -10,7 +10,7 @@
 <footer class="footer {{curNode.type}}" role="content" aria-label="footer">
     <article class="block__wrap" style="max-width: 1780px; margin: auto;">
         <section class="footer--left">
-            <span>Version: 3.12.2</span>
+            <span>Version: 3.13.0</span>
             <p><span translate="FOOTER_1">Free, open-source, client-side interface for generating Ethereum Classic wallets &amp; more. Interact with the Ethereum-compatible blockchains such are ETH, ETC, UBQ and EXP easily &amp; securely. Double-check the URL ( https://ethereumproject.github.io/etherwallet/ ) before unlocking your wallet.</span>
             </p>
             <p><a data-target="#disclaimerModal" data-toggle="modal" target="_blank" rel="noopener" role="link"
