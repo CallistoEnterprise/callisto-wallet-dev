@@ -77,7 +77,7 @@ customNode.prototype.getBalance = function(addr, callback) {
     this.post(
         {
             method: "eth_getBalance",
-            params: [addr, "latest"]
+            params: [addr, "pending"]
         },
         function(data) {
             if (data.error)
@@ -119,7 +119,7 @@ customNode.prototype.getTransactionData = function(addr, callback) {
             id: parentObj.getRandomID(),
             jsonrpc: "2.0",
             method: "eth_getBalance",
-            params: [addr, "latest"]
+            params: [addr, "pending"]
         },
         {
             id: parentObj.getRandomID(),
@@ -131,7 +131,7 @@ customNode.prototype.getTransactionData = function(addr, callback) {
             id: parentObj.getRandomID(),
             jsonrpc: "2.0",
             method: "eth_getTransactionCount",
-            params: [addr, "latest"]
+            params: [addr, "pending"]
         }
     ];
     this.rawPost(reqObj, function(data) {
