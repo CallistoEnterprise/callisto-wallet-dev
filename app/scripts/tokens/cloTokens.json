@@ -13,13 +13,13 @@
     },
     {
         "address": "0xcC00860947035a26Ffe24EcB1301ffAd3a89f910",
-        "symbol": "ccETH",
+        "symbol": "ccETH (ERC20)",
         "decimal": 18,
         "type": "default"
     },
     {
         "address": "0xCC78D0A86B0c0a3b32DEBd773Ec815130F9527CF",
-        "symbol": "ccBNB",
+        "symbol": "ccBNB (ERC20)",
         "decimal": 18,
         "type": "default"
     },
@@ -39,6 +39,102 @@
         "address": "0x83736D58F496afab4cF7D8453575ab59279810ec",
         "symbol": "CHOAM",
         "decimal": 18,
+        "type": "default"
+    },
+	{
+        "address": "0xcc50aB63766660C6C1157B8d6A5D51ceA82Dff34",
+        "symbol": "ccFTM",
+        "decimal": 18,
+        "type": "default"
+    },
+	{
+        "address": "0xCC10A4050917f771210407DF7A4C048e8934332c",
+        "symbol": "ccLINA",
+        "decimal": 18,
+        "type": "default"
+    },
+	{
+        "address": "0xcca4f2ed7fc093461c13f7f5d79870625329549a",
+        "symbol": "ccSHIB",
+        "decimal": 18,
+        "type": "default"
+    },
+	{
+        "address": "0xCC099e75152ACCda96d54FAbaf6e333ca44AD86e",
+        "symbol": "ccTWT",
+        "decimal": 18,
+        "type": "default"
+    },
+	{
+        "address": "0xcCDe29903E621Ca12DF33BB0aD9D1ADD7261Ace9",
+        "symbol": "ccBNB (ERC223)",
+        "decimal": 18,
+        "type": "default"
+    },
+	{
+        "address": "0xCCc766f97629a4E14b3af8C91EC54f0b5664A69F",
+        "symbol": "ccETC (ERC223)",
+        "decimal": 18,
+        "type": "default"
+    },
+	{
+        "address": "0xcC208c32Cc6919af5d8026dAB7A3eC7A57CD1796",
+        "symbol": "ccETH (ERC223)",
+        "decimal": 18,
+        "type": "default"
+    },
+	{
+        "address": "0xCC2D45F7fE1b8864a13F5D552345eB3f5a005FEd",
+        "symbol": "ccCAKE",
+        "decimal": 18,
+        "type": "default"
+    },
+	{
+        "address": "0xccEbb9f0EE6D720DebccEE42f52915037f774A70",
+        "symbol": "ccWSG",
+        "decimal": 18,
+        "type": "default"
+    },
+	{
+        "address": "0xCCeC9F26F52E8e0D1d88365004f4F475f5274279",
+        "symbol": "ccBAKE",
+        "decimal": 18,
+        "type": "default"
+    },
+	{
+        "address": "0xCC8B04c0f7d0797B3BD6b7BE8E0061ac0c3c0A9b",
+        "symbol": "ccRACA",
+        "decimal": 18,
+        "type": "default"
+    },
+	{
+        "address": "0xCC50D400042177B9DAb6bd31ede73aE8e1ED6F08",
+        "symbol": "ccTON",
+        "decimal": 9,
+        "type": "default"
+    },
+	{
+        "address": "0xcc45afedd2065EDcA770801055d1E376473a871B",
+        "symbol": "ccXMS",
+        "decimal": 18,
+        "type": "default"
+    },
+	{
+        "address": "0xCc99C6635Fae4DAcF967a3fc2913ab9fa2b349C3",
+        "symbol": "ccBTT",
+        "decimal": 18,
+        "type": "default"
+    },
+	{
+        "address": "0xcCCaC2f22752bbe77D4DAb4e9421F2AC6c988427",
+        "symbol": "ccBBT",
+        "decimal": 18,
+        "type": "default"
+    },
+	{
+        "address": "0xCCd792f5D06b73685a1b54A32fE786346cAd1894",
+        "symbol": "ccANTEX",
+        "decimal": 8,
         "type": "default"
     }
 ]
