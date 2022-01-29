@@ -439,7 +439,7 @@ zhtw.data = {
     SUCCESS_1: "有效的地址 ",
     SUCCESS_2: "成功解密錢包 ",
     SUCCESS_3:
-        "Your TX has been broadcast to the network. It is waiting to be mined & confirmed. During ICOs, it may take 3+ hours to confirm. Use the Verify & Check buttons below to see. TX Hash:  ", //'Your TX has been broadcast to the network. It is waiting to be mined & confirmed. During ICOs, it may take 3+ hours to confirm. Use the Verify & Check buttons below to see. TX Hash:   ', //
+        "Your TX has been broadcasted to the network. It is waiting to be mined & confirmed. During ICOs, it may take 3+ hours to confirm. Use the Verify & Check buttons below to see. TX Hash:  ", //'Your TX has been broadcasted to the network. It is waiting to be mined & confirmed. During ICOs, it may take 3+ hours to confirm. Use the Verify & Check buttons below to see. TX Hash:   ', //
     SUCCESS_4: "成功新增你的錢包 ",
     SUCCESS_5: "已選擇檔案 ",
     SUCCESS_6: "You are successfully connected ",

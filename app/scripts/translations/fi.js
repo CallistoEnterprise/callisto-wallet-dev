@@ -497,7 +497,7 @@ fi.data = {
     SUCCESS_1: "Validi osoite ",
     SUCCESS_2: "Lompakon salaus onnistuneesti purettu ",
     SUCCESS_3:
-        "Your TX has been broadcast to the network. It is waiting to be mined & confirmed. During ICOs, it may take 3+ hours to confirm. Use the Verify & Check buttons below to see. TX Hash:   ", //'Siirto lähetetty. TX Hash ',
+        "Your TX has been broadcasted to the network. It is waiting to be mined & confirmed. During ICOs, it may take 3+ hours to confirm. Use the Verify & Check buttons below to see. TX Hash:   ", //'Siirto lähetetty. TX Hash ',
     SUCCESS_4: "Lompakkosi lisätty onnistuneesti ",
     SUCCESS_5: "Valittu Tiedosto ",
     SUCCESS_6: "You are successfully connected ",

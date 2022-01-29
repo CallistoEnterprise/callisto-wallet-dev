@@ -468,7 +468,7 @@ zhcn.data = {
     SUCCESS_1: "有效地址 ",
     SUCCESS_2: "钱包解密成功 ",
     SUCCESS_3:
-        "Your TX has been broadcast to the network. It is waiting to be mined & confirmed. During ICOs, it may take 3+ hours to confirm. Use the Verify & Check buttons below to see. TX Hash:  ", //'Your TX has been broadcast to the network. It is waiting to be mined & confirmed. During ICOs, it may take 3+ hours to confirm. Use the Verify & Check buttons below to see. TX Hash:   ', //
+        "Your TX has been broadcasted to the network. It is waiting to be mined & confirmed. During ICOs, it may take 3+ hours to confirm. Use the Verify & Check buttons below to see. TX Hash:  ", //'Your TX has been broadcasted to the network. It is waiting to be mined & confirmed. During ICOs, it may take 3+ hours to confirm. Use the Verify & Check buttons below to see. TX Hash:   ', //
     SUCCESS_4: "成功添加你的钱包： ",
     SUCCESS_5: "选择的文件： ",
     SUCCESS_6: "You are successfully connected ",

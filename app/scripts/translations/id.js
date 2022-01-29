@@ -480,7 +480,7 @@ id.data = {
     SUCCESS_1: "Alamat valid ",
     SUCCESS_2: "Dompet telah ter-dekripsi ",
     SUCCESS_3:
-        "Your TX has been broadcast to the network. It is waiting to be mined & confirmed. During ICOs, it may take 3+ hours to confirm. Use the Verify & Check buttons below to see. TX Hash:   ", //'Transaksi diajukan. TX Hash ',
+        "Your TX has been broadcasted to the network. It is waiting to be mined & confirmed. During ICOs, it may take 3+ hours to confirm. Use the Verify & Check buttons below to see. TX Hash:   ", //'Transaksi diajukan. TX Hash ',
     SUCCESS_4: "Dompet Anda telah ditambahkan ",
     SUCCESS_5: "File Terpilih ",
     SUCCESS_6: "You are successfully connected ",

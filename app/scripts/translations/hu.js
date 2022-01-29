@@ -483,7 +483,7 @@ hu.data = {
     SUCCESS_1: "Érvényes cím ",
     SUCCESS_2: "Tárca sikeresen dekódolva ",
     SUCCESS_3:
-        "Your TX has been broadcast to the network. It is waiting to be mined & confirmed. During ICOs, it may take 3+ hours to confirm. Use the Verify & Check buttons below to see. TX Hash:   ", //'Tranzakció elküldve. TX Hash ',
+        "Your TX has been broadcasted to the network. It is waiting to be mined & confirmed. During ICOs, it may take 3+ hours to confirm. Use the Verify & Check buttons below to see. TX Hash:   ", //'Tranzakció elküldve. TX Hash ',
     SUCCESS_4: "Tárcád sikeresen hozzáadva ",
     SUCCESS_5: "File Selected ",
     SUCCESS_6: "You are successfully connected ",
