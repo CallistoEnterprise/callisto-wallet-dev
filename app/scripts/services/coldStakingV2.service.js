@@ -4,6 +4,7 @@ const contract = require("../abiDefinitions/clo.json").find(
         ethUtil.toChecksumAddress("0x08A7c8be47773546DC5E173d67B0c38AfFfa4b84")
 );
 
+const stakingApi = require("../controllers/stakingApi");
 if (!contract) throw new Error("Unable to locate cold staking contract");
 
 const addrs = {
@@ -185,6 +186,17 @@ const coldStakingV2Service = function(walletService) {
             });
     };
 
+    this.stakingStatus = () => stakingApi.getStakingStatus(ajaxReq.type.toLowerCase(),[walletService.wallet.getChecksumAddressString()]).then(function(result){
+            if (walletService.wallet.getChecksumAddressString() in result){
+                var response = result[walletService.wallet.getChecksumAddressString()];
+                var [currentStakingRound,totalRounds] = [0,0];
+                if (response.status !='N/A' && response.status !='EOT'){
+                    [currentStakingRound,totalRounds] = response.status.split('/');
+                }
+                return {'currentStakingRound':currentStakingRound,'totalRounds':totalRounds}
+            }
+            return result;
+    });
     return this;
 };
 

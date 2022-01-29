@@ -1,5 +1,6 @@
 "use strict";
 const _throttle = require("lodash/throttle");
+const ajaxReq = require("../ajaxReq");
 
 var tabsCtrl = function(
     $http,

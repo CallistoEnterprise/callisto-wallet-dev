@@ -20,6 +20,13 @@ module.exports = function accountBalanceTable(
                 text: ""
             };
 
+            scope.stakingStatus = {
+                "currentStakingRound":0,
+                "totalRounds":0
+            };
+            coldStakingV2Service.stakingStatus().then(function(response){
+                    Object.assign(scope.stakingStatus,response);
+            });
             scope.setProgressBar = function() {
                 const _date = new Date();
                 const { time: _time, amount } = coldStakingService.stakingInfo;
@@ -66,6 +73,7 @@ module.exports = function accountBalanceTable(
                 const stakingRounds = Math.ceil((end_time - _time) / _thresholdTime);
                 const currentStakingRound  = Math.floor((Date.now() - _time) / _thresholdTime) + 1;
 
+                const end_time_date = new Date(end_time);
                 const num = _date - time;
                 const denom = thresholdTime - time;
                 const progress = num / denom;
@@ -78,18 +86,20 @@ module.exports = function accountBalanceTable(
                     currentStakingRound : currentStakingRound,
                     multiplier: multiplier,
                     elapsed: num,
+                    stakingEndsDateStr: new Intl.DateTimeFormat('en-GB', { dateStyle: 'short', timeStyle: 'medium' }).format(end_time_date),
+                    stakingDaysLeft: ((end_time - _time) / (1000*3600 * 24)).toFixed(1),
                     threshold: thresholdTime,
                     remaining: thresholdTime - _date
                 });
             };
 
             scope.setProgressBar();
-            scope.setProgressBarV2();
+            scope.setProgressBarV2();            
 
             scope.progressBarInterval = $interval(() => {
                 scope.setProgressBar();
                 scope.setProgressBarV2();
-            }, 1000);
+            }, 3000);
 
             scope.$on("$destroy", () => {
                 $interval.cancel(scope.progressBarInterval);

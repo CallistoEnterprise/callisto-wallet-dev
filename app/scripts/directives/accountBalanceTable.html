@@ -234,13 +234,13 @@
             <!--</p>-->
             
             <p class="small" ng-if="progressBarV2.currentStakingRound <= progressBarV2.stakingRounds">
-                V2: <strong>Round: </strong> {{progressBarV2.currentStakingRound}} of {{progressBarV2.stakingRounds}} | <strong>Multiplier:</strong> {{ progressBarV2.multiplier }}
+                V2: <strong>Round: </strong> {{stakingStatus.currentStakingRound}} of {{stakingStatus.totalRounds}} | <strong>Multiplier:</strong> {{ progressBarV2.multiplier }}
+                | <strong> Stake ends: </strong> {{ progressBarV2.stakingEndsDateStr }} ({{ progressBarV2.stakingDaysLeft }} day(s) left)
             </p>
             <p class="small" ng-if="progressBarV2.currentStakingRound > progressBarV2.stakingRounds">V2: Staking Term exceeded</p>
             
-            
-            <div class="progress">
-                <div class="progress-bar"
+            <div class="progress" style="width: 50%; float:left;position: relative; height: 24px">
+                <div class="progress-bar" style="background-color: #34c88a; color: #163f59; margin:3px"
                      role="progressbar"
                      aria-valuenow={{progressBarV2.width}}
                      aria-valuemin="0"
@@ -248,7 +248,19 @@
                      ng-class="progressBarV2.klass"
                      ng-style="{width: progressBarV2.width + '%' }"
                 >
-                    <span class="mono">V2 {{progressBarV2.width + '%'}}</span>
+                    <span class="mono" style="position: absolute; display: block; width: 100%;">Current Round {{progressBarV2.width + '%'}}</span>
+                </div>
+            </div>
+            <div class="progress" style="width: 50%; float:left;position: relative; height: 24px">
+                <div class="progress-bar" style="background-color: #163f59; color: #34c88a; margin:3px"
+                     role="progressbar"
+                     aria-valuenow={{progressBarV2.currentStakingRound}}
+                     aria-valuemin="0"
+                     aria-valuemax="100"
+                     ng-class="progressBarV2.klass"
+                     ng-style="{width: (progressBarV2.currentStakingRound/stakingStatus.totalRounds*100) + '%' }"
+                >
+                    <span class="mono" style="position: absolute; display: block; width: 100%;">Total Rounds {{(progressBarV2.currentStakingRound/stakingStatus.totalRounds*100).toFixed(2) + '%'}}</span>
                 </div>
             </div>
         </td>
