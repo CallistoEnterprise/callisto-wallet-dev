@@ -13,7 +13,7 @@ const sendTxCtrl = function($scope, $sce, $rootScope, walletService) {
     }
 
     $scope.networks = globalFuncs.networks;
-
+    $scope.parseFloat = parseFloat;
     $scope.ajaxReq = ajaxReq;
     $scope.calculatingSendBalance = false;
     $scope.wd = false;

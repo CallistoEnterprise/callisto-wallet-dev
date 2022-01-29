@@ -43,10 +43,10 @@
             </a>
             </li>
             <li ng-repeat="token in walletService.wallet.tokenObjs track by $index"
-                ng-show="tokenVisibility=='shown' && token.balance !== 0 && token.type !== 'default'">
+                ng-show="tokenVisibility=='shown' && token.balance > 0 && token.type !== 'default'">
                 <a ng-class="{true:'active'}[unitReadable === token.getSymbol()]"
                    ng-click="setSendMode('token', $index, token.getSymbol())">
-                    {{token.getSymbol()}}
+                    <strong>{{token.getSymbol()}}</strong> [{{ parseFloat(token.balance).toFixed(2) }}]
                 </a>
             </li>
 
