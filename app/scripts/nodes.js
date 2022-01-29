@@ -9,6 +9,7 @@ nodes.nodeTypes = {
     CLO: "CLO",
     CLOT: "Testnet CLO",
     BSC: "BSC",
+    BTTC:"BTTC",
     ETH: "ETH",
     ETC: "ETC",
     ETCT: "Testnet ETC",
@@ -83,6 +84,11 @@ nodes.alternativeBalance = {
         node: "bsc_main",
         symbol: "BNB",
     },
+    BTTC: {
+        balance: "Loading",
+        node: "bttc_main",
+        symbol: "BTT",
+    },
     CLO: {
         balance: "Loading",
         node: "clo_mainnet",
@@ -107,7 +113,8 @@ nodes.nodeList = {
         service: "Callisto.network",
         abiList: require("./abiDefinitions/clo.json"),
         icon: "clo",
-        lib: new nodes.customNode("https://ip-159-175.cust.aspone.cz/walletclonode", "")
+        lib: new nodes.customNode("https://clo-geth.0xinfra.com/", "")
+        //lib: new nodes.customNode("https://ip-159-175.cust.aspone.cz/walletclonode", "")
     },
     clo_testnet3: {
         name: "CLO Testnet",
@@ -163,6 +170,19 @@ nodes.nodeList = {
         service: "Binance SmartChain",
         icon: "bnb",
         lib: new nodes.customNode("https://bsc-dataseed.binance.org", "")
+    },
+    bttc_main: {
+        name: "BTTC",
+        blockExplorerTX: "https://scan.bt.io/#/transaction/[[txHash]]",
+        blockExplorerAddr: "https://scan.bt.io/#/address/[[address]]",
+        type: nodes.nodeTypes.BTTC,
+        eip155: true,
+        chainId: 199,
+        tokenList: require("./tokens/bttcTokens.json"),
+        abiList: require("./abiDefinitions/bttc.json"),
+        service: "BitTorrent-Chain",
+        icon: "btt",
+        lib: new nodes.customNode("https://rpc.bittorrentchain.io/", "")
     }
 };
 module.exports = nodes;

@@ -1,5 +1,12 @@
-<span class="{{'icon icon-' + icon}}"
+<span ng-if="!customIcons.hasOwnProperty(icon)" class="{{'icon icon-' + icon}}"
       ng-style="{color: colors[icon]}"
+>
+    <span ng-show="!hidetext">
+        {{icon | uppercase}}
+    </span>
+</span>
+<span ng-if="customIcons.hasOwnProperty(icon)" class="icon"
+      ng-style="{color: colors[icon], 'background-image': customIcons[icon], 'width':'14.4px','height':'14.4px', 'background-size': '14.4px'}"
 >
     <span ng-show="!hidetext">
         {{icon | uppercase}}
