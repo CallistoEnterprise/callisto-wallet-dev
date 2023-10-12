@@ -103,8 +103,8 @@
             <li><a ng-class="{true:'active'}[curLang=='Tiếng Việt']" ng-click="changeLanguage('vi','Tiếng Việt'  )"> Tiếng Việt      </a></li>
             <li><a ng-class="{true:'active'}[curLang=='简体中文']"
                    ng-click="changeLanguage('zhcn','简体中文'   )"> 简体中文         </a></li>
-            <li><a ng-class="{true:'active'}[curLang=='繁體中文']"
-                   ng-click="changeLanguage('zhtw','繁體中文'   )"> 繁體中文         </a></li>
+            <!--<li><a ng-class="{true:'active'}[curLang=='繁體中文']"
+                   ng-click="changeLanguage('zhtw','繁體中文'   )"> 繁體中文         </a></li>-->
             <li role="separator" class="divider"></li>
             <li><a data-toggle="modal" data-target="#disclaimerModal" translate="FOOTER_4"> Disclaimer </a></li>
           </ul>
@@ -184,8 +184,18 @@
 
                 
                 <li ng-repeat="tab in tabNames track by $index" class="nav-item {{tab.name}}"
-                    ng-class="{active: $index==gService.currentTab}" ng-show="tab.mew" ng-click="tabClick($index)"><a
-                    tabindex="0" aria-label="nav item: {{tab.name | translate}}" translate="{{tab.name}}"></a></li>
+                    ng-class="{active: $index==gService.currentTab}" ng-show="tab.mew" ng-click="tabClick($index)">
+                    <a ng-if="tab.name == 'NAV_SendEther' && ajaxReq.type =='BSC'"
+                    tabindex="0" aria-label="nav item: {{tab.name | translate}}" >Send BNB & Tokens</a>
+                    <a ng-if="tab.name == 'NAV_SendEther' && ajaxReq.type =='BTTC'"
+                    tabindex="0" aria-label="nav item: {{tab.name | translate}}" >Send BTT & Tokens</a>
+                    <a ng-if="tab.name == 'NAV_SendEther' && (ajaxReq.type =='ETH' || ajaxReq.type == 'ETC')"
+                    tabindex="0" aria-label="nav item: {{tab.name | translate}}" >Send {{ajaxReq.type}} & Tokens</a>
+                    <a ng-if="tab.name == 'NAV_SendEther' && (ajaxReq.type =='CLO' || ajaxReq.type == 'Testnet CLO')"
+                    tabindex="0" aria-label="nav item: {{tab.name | translate}}" >Send and Stake CLO & Tokens</a>
+                    <a ng-if="tab.name != 'NAV_SendEther'"
+                    tabindex="0" aria-label="nav item: {{tab.name | translate}}" translate="{{tab.name}}"></a>
+                    </li>
                 
                 
             </ul>
@@ -549,7 +559,7 @@
 <footer class="footer {{curNode.type}}" role="content" aria-label="footer">
     <article class="block__wrap" style="max-width: 1780px; margin: auto;">
         <section class="footer--left">
-            <span>Version: 3.12.2</span>
+            <span>Version: 3.13.0</span>
             <p><span translate="FOOTER_1">Free, open-source, client-side interface for generating Ethereum Classic wallets &amp; more. Interact with the Ethereum-compatible blockchains such are ETH, ETC, UBQ and EXP easily &amp; securely. Double-check the URL ( https://ethereumproject.github.io/etherwallet/ ) before unlocking your wallet.</span>
             </p>
             <p><a data-target="#disclaimerModal" data-toggle="modal" target="_blank" rel="noopener" role="link"
@@ -559,7 +569,7 @@
         <section class="footer--cent">
             <h5><i aria-hidden="true">💝</i> Donations are always appreciated!</h5>
             <p>CLO, ETH or ETC donation address: <span class="mono wrap"><big><a
-                href="https://explorer2.callisto.network/addr/0x74682fc32007af0b6118f259cbe7bccc21641600">0x74682fc32007af0b6118f259cbe7bccc21641600</a></big></span>
+                href="https://explorer.callisto.network/addr/0x74682fc32007af0b6118f259cbe7bccc21641600">0x74682fc32007af0b6118f259cbe7bccc21641600</a></big></span>
             </p>
             <h5><i aria-hidden="true">👫</i> You can support us by supporting our blockchain-family.</h5>
             <p><a

@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/d22416fc-ee18-420e-9925-a56889b6b246/deploy-status)](https://app.netlify.com/sites/friendly-tesla-3b7023/deploys)
+
 ## https://classicetherwallet.com - Content of ClassicEtherWallet.com is served directly from github.
 
 ### ClassicEtherWallet
