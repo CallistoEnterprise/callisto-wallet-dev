@@ -9,7 +9,7 @@ nodes.nodeTypes = {
     CLO: "CLO",
     CLOT: "Testnet CLO",
     BSC: "BSC",
-    BTTC:"BTTC",
+    BTTC: "BTTC",
     ETH: "ETH",
     ETC: "ETC",
     ETCT: "Testnet ETC",
@@ -82,12 +82,12 @@ nodes.alternativeBalance = {
     BSC: {
         balance: "Loading",
         node: "bsc_main",
-        symbol: "BNB",
+        symbol: "BNB"
     },
     BTTC: {
         balance: "Loading",
         node: "bttc_main",
-        symbol: "BTT",
+        symbol: "BTT"
     },
     CLO: {
         balance: "Loading",
@@ -105,7 +105,8 @@ nodes.nodeList = {
     clo_mainnet: {
         name: "Callisto - CLO",
         blockExplorerTX: "https://explorer.callisto.network/tx/[[txHash]]",
-        blockExplorerAddr: "https://explorer.callisto.network/address/[[address]]",
+        blockExplorerAddr:
+            "https://explorer.callisto.network/address/[[address]]",
         type: nodes.nodeTypes.CLO,
         eip155: true,
         chainId: 820,
@@ -113,26 +114,31 @@ nodes.nodeList = {
         service: "Callisto.network",
         abiList: require("./abiDefinitions/clo.json"),
         icon: "clo",
+        default_gasPrice: 1001,
         lib: new nodes.customNode("https://rpc.callisto.network/", "")
         //lib: new nodes.customNode("https://ip-159-175.cust.aspone.cz/walletclonode", "")
     },
     clo_testnet3: {
         name: "CLO Testnet",
-        blockExplorerTX: "https://testnet-explorer.callisto.network/tx/[[txHash]]",
-        blockExplorerAddr: "https://testnet-explorer.callisto.network/address/[[address]]",
+        blockExplorerTX:
+            "https://testnet-explorer.callisto.network/tx/[[txHash]]",
+        blockExplorerAddr:
+            "https://testnet-explorer.callisto.network/address/[[address]]",
         type: nodes.nodeTypes.CLOT,
         eip155: true,
         chainId: 20729,
         tokenList: require("./tokens/cloTestTokens.json"),
         service: "Callisto.network",
         icon: "clo",
+        default_gasPrice: 1001,
         abiList: require("./abiDefinitions/clo.json"),
         lib: new nodes.customNode("https://testnet-rpc.callisto.network/", "")
     },
     etc_ethercluster: {
         name: "ETC",
         blockExplorerTX: "https://blockscout.com/etc/mainnet/tx/[[txHash]]",
-        blockExplorerAddr: "https://blockscout.com/etc/mainnet/address/[[address]]",
+        blockExplorerAddr:
+            "https://blockscout.com/etc/mainnet/address/[[address]]",
         type: nodes.nodeTypes.ETC,
         eip155: true,
         chainId: 61,
@@ -140,6 +146,7 @@ nodes.nodeList = {
         abiList: require("./abiDefinitions/etcAbi.json"),
         service: "Ether Cluster",
         icon: "etc",
+        default_gasPrice: 21,
         lib: new nodes.customNode("https://etc.etcdesktop.com/", "")
         //lib: new nodes.customNode("https://ip-159-175.cust.aspone.cz/walletetcnode", "")
     },
@@ -154,7 +161,11 @@ nodes.nodeList = {
         abiList: require("./abiDefinitions/ethAbi.json"),
         service: "Ether Cluster",
         icon: "eth",
-        lib: new nodes.customNode("https://ip-159-225.cust.aspone.cz/walletethnode", "")
+        default_gasPrice: 21,
+        lib: new nodes.customNode(
+            "https://ip-159-225.cust.aspone.cz/walletethnode",
+            ""
+        )
     },
     bsc_main: {
         name: "BSC",
@@ -167,6 +178,7 @@ nodes.nodeList = {
         abiList: require("./abiDefinitions/bsc.json"),
         service: "Binance SmartChain",
         icon: "bnb",
+        default_gasPrice: 21,
         lib: new nodes.customNode("https://bsc-dataseed.binance.org", "")
     },
     bttc_main: {
@@ -180,6 +192,7 @@ nodes.nodeList = {
         abiList: require("./abiDefinitions/bttc.json"),
         service: "BitTorrent-Chain",
         icon: "btt",
+        default_gasPrice: 21,
         lib: new nodes.customNode("https://rpc.bittorrentchain.io/", "")
     }
 };
