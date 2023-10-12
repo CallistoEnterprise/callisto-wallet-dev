@@ -108,7 +108,7 @@ var tabsCtrl = function(
 
     const gasPriceKey = "gasPrice";
 
-    const defaultValue = 21;
+    const defaultValue = 1001;
 
     const gasValue =
         parseFloat(globalFuncs.localStorage.getItem(gasPriceKey)) ||
@@ -118,7 +118,7 @@ var tabsCtrl = function(
         defaultValue,
         curVal: gasValue,
         value: gasValue,
-        max: 100,
+        max: 2000,
         min: 0.1,
         step: 0.1,
         recommendedGas: {
@@ -133,7 +133,7 @@ var tabsCtrl = function(
         if (!isValidPrice($scope.gas.value)) {
             // uiFuncs.notifier.danger(globalFuncs.errorMsgs[38]);
             uiFuncs.notifier.danger(
-                "Invalid gas price! Min gasPrice is 0.1 GWei. Max gasPrice is 100 GWei. GasPrice is resetted to 21GWei default value!"
+                "Invalid gas price! Min gasPrice is 0.1 GWei. Max gasPrice is 2000 GWei. GasPrice is resetted to 21GWei default value!"
             );
             $scope.gas.value = $scope.gas.defaultValue;
             globalFuncs.localStorage.setItem(
