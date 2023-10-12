@@ -28,7 +28,7 @@ uiFuncs.getTxData = function({
         gasLimit,
         data,
         nonce,
-        gasPrice: globalFuncs.localStorage.getItem("gasPrice", 21), // gwei
+        gasPrice: globalFuncs.localStorage.getItem("gasPrice", 1001), // gwei
         from: wallet.getChecksumAddressString(),
         privKey: wallet.privKey ? wallet.getPrivateKeyString() : "",
         path: wallet.getPath(),
@@ -237,7 +237,7 @@ uiFuncs.generateTx = function(_txData) {
 
 uiFuncs.genTxWithInfo = function(data, callback = console.log) {
     const gasPrice =
-        parseFloat(globalFuncs.localStorage.getItem("gasPrice")) || 21;
+        parseFloat(globalFuncs.localStorage.getItem("gasPrice")) || 1001;
 
     const rawTx = {
         nonce: ethFuncs.sanitizeHex(data.nonce),

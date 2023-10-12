@@ -105,7 +105,7 @@ nodes.nodeList = {
     clo_mainnet: {
         name: "Callisto - CLO",
         blockExplorerTX: "https://explorer.callisto.network/tx/[[txHash]]",
-        blockExplorerAddr: "https://explorer.callisto.network/addr/[[address]]",
+        blockExplorerAddr: "https://explorer.callisto.network/address/[[address]]",
         type: nodes.nodeTypes.CLO,
         eip155: true,
         chainId: 820,
@@ -113,15 +113,13 @@ nodes.nodeList = {
         service: "Callisto.network",
         abiList: require("./abiDefinitions/clo.json"),
         icon: "clo",
-        lib: new nodes.customNode("https://clo-geth.0xinfra.com/", "")
+        lib: new nodes.customNode("https://rpc.callisto.network/", "")
         //lib: new nodes.customNode("https://ip-159-175.cust.aspone.cz/walletclonode", "")
     },
     clo_testnet3: {
         name: "CLO Testnet",
-        blockExplorerTX:
-            "https://testnet-explorer.callisto.network/tx/[[txHash]]",
-        blockExplorerAddr:
-            "https://testnet-explorer.callisto.network/address/[[address]]",
+        blockExplorerTX: "https://testnet-explorer.callisto.network/tx/[[txHash]]",
+        blockExplorerAddr: "https://testnet-explorer.callisto.network/address/[[address]]",
         type: nodes.nodeTypes.CLOT,
         eip155: true,
         chainId: 20729,
@@ -133,9 +131,8 @@ nodes.nodeList = {
     },
     etc_ethercluster: {
         name: "ETC",
-        blockExplorerTX: "https://classic.etccoopexplorer.com/tx/[[txHash]]",
-        blockExplorerAddr:
-            "https://classic.etccoopexplorer.com/address/[[address]]",
+        blockExplorerTX: "https://blockscout.com/etc/mainnet/tx/[[txHash]]",
+        blockExplorerAddr: "https://blockscout.com/etc/mainnet/address/[[address]]",
         type: nodes.nodeTypes.ETC,
         eip155: true,
         chainId: 61,
@@ -143,7 +140,8 @@ nodes.nodeList = {
         abiList: require("./abiDefinitions/etcAbi.json"),
         service: "Ether Cluster",
         icon: "etc",
-        lib: new nodes.customNode("https://ip-159-175.cust.aspone.cz/walletetcnode", "")
+        lib: new nodes.customNode("https://etc.etcdesktop.com/", "")
+        //lib: new nodes.customNode("https://ip-159-175.cust.aspone.cz/walletetcnode", "")
     },
     eth_mew: {
         name: "ETH",
@@ -173,8 +171,8 @@ nodes.nodeList = {
     },
     bttc_main: {
         name: "BTTC",
-        blockExplorerTX: "https://scan.bt.io/#/transaction/[[txHash]]",
-        blockExplorerAddr: "https://scan.bt.io/#/address/[[address]]",
+        blockExplorerTX: "https://bttcscan.com/tx/[[txHash]]",
+        blockExplorerAddr: "https://bttcscan.com/address/[[address]]",
         type: nodes.nodeTypes.BTTC,
         eip155: true,
         chainId: 199,
