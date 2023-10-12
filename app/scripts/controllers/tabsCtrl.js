@@ -158,7 +158,7 @@ var tabsCtrl = function(
         if ($scope.keyNode == null) {
             return;
         }
-
+        console.log($scope.keyNode);
         $scope.gasChanged();
     };
 
