@@ -127,7 +127,7 @@ var tabsCtrl = function(
         }
     };
 
-    const isValidPrice = price => 0.1 <= price && price <= 100;
+    const isValidPrice = price => 0.1 <= price && price <= 2000;
 
     $scope.validateGasPrice = function validateGasPrice() {
         if (!isValidPrice($scope.gas.value)) {

@@ -18,7 +18,14 @@ const LedgerEth = require("@ledgerhq/hw-app-eth").default;
 
 const uiFuncs = function() {};
 uiFuncs.getTxData = function({
-    tx: { to = "", value = 0, unit = "ether", gasLimit = 21000, data = "", nonce=null },
+    tx: {
+        to = "",
+        value = 0,
+        unit = "ether",
+        gasLimit = 21000,
+        data = "",
+        nonce = null
+    },
     wallet
 }) {
     return {
@@ -28,7 +35,7 @@ uiFuncs.getTxData = function({
         gasLimit,
         data,
         nonce,
-        gasPrice: globalFuncs.localStorage.getItem("gasPrice", 1001), // gwei
+        gasPrice: globalFuncs.localStorage.getItem("gasPrice", 21), // gwei
         from: wallet.getChecksumAddressString(),
         privKey: wallet.privKey ? wallet.getPrivateKeyString() : "",
         path: wallet.getPath(),
@@ -237,7 +244,7 @@ uiFuncs.generateTx = function(_txData) {
 
 uiFuncs.genTxWithInfo = function(data, callback = console.log) {
     const gasPrice =
-        parseFloat(globalFuncs.localStorage.getItem("gasPrice")) || 1001;
+        parseFloat(globalFuncs.localStorage.getItem("gasPrice")) || 21;
 
     const rawTx = {
         nonce: ethFuncs.sanitizeHex(data.nonce),
@@ -265,7 +272,8 @@ uiFuncs.genTxWithInfo = function(data, callback = console.log) {
     const eTx = new ethUtil.Tx(rawTx);
 
     if (data.hwType === "ledger") {
-        Transport().then(transport => {
+        Transport()
+            .then(transport => {
                 const app = new LedgerEth(transport);
 
                 let EIP155Supported = false;
@@ -457,7 +465,9 @@ uiFuncs.transferAllBalance = function(addr, { gasLimit = 21000 } = {}) {
             const valueEther = etherUnits.toEther(value, "wei");
             return resolve({
                 unit: "ether",
-                value: new BigNumber(parseFloat(valueEther).toFixed(9)).toNumber(),
+                value: new BigNumber(
+                    parseFloat(valueEther).toFixed(9)
+                ).toNumber(),
                 nonce,
                 gasPrice: gasPrice.toNumber(),
                 gasCost
