@@ -155,10 +155,10 @@ var tabsCtrl = function(
 
     $scope.setGasPrice = function() {
         $scope.keyNode = globalFuncs.localStorage.getItem("curNode", null);
+        console.log("$scope.keyNode", $scope.keyNode);
         if ($scope.keyNode == null) {
             return;
         }
-        console.log($scope.keyNode);
         $scope.gasChanged();
     };
 
@@ -195,6 +195,7 @@ var tabsCtrl = function(
             })
         );
         $scope.keyNode = globalFuncs.localStorage.getItem("curNode", null);
+        console.log("$scope 2.keyNode", $scope.keyNode);
         $rootScope.$broadcast("ChangeNode", key);
 
         $scope.curNode.lib
