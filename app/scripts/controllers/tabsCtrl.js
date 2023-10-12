@@ -108,7 +108,7 @@ var tabsCtrl = function(
 
     const gasPriceKey = "gasPrice";
 
-    const defaultValue = 1001;
+    const defaultValue = 21;
 
     const gasValue =
         parseFloat(globalFuncs.localStorage.getItem(gasPriceKey)) ||
@@ -151,7 +151,6 @@ var tabsCtrl = function(
             parseFloat($scope.gas.value) || $scope.gas.defaultValue;
         globalFuncs.localStorage.setItem(gasPriceKey, gasPrice);
         ethFuncs.gasAdjustment = gasPrice;
-        console.log("gasPrice", gasPrice);
     };
 
     $scope.setGasPrice = function() {
@@ -195,9 +194,7 @@ var tabsCtrl = function(
             })
         );
         $scope.keyNode = globalFuncs.localStorage.getItem("curNode", null);
-        //console.log("$scope.curNode", $scope.curNode);
         $scope.gas.value = $scope.curNode.default_gasPrice;
-        //console.log("$scope.gas.value", $scope.gas.value);
         $scope.setGasPrice();
 
         $rootScope.$broadcast("ChangeNode", key);
