@@ -151,11 +151,11 @@ var tabsCtrl = function(
             parseFloat($scope.gas.value) || $scope.gas.defaultValue;
         globalFuncs.localStorage.setItem(gasPriceKey, gasPrice);
         ethFuncs.gasAdjustment = gasPrice;
+        console.log("gasPrice", gasPrice);
     };
 
     $scope.setGasPrice = function() {
         $scope.keyNode = globalFuncs.localStorage.getItem("curNode", null);
-        console.log("$scope 1. curNode", $scope.curNode);
         if ($scope.keyNode == null) {
             return;
         }
@@ -195,10 +195,10 @@ var tabsCtrl = function(
             })
         );
         $scope.keyNode = globalFuncs.localStorage.getItem("curNode", null);
-        console.log("$scope.curNode", $scope.curNode);
+        //console.log("$scope.curNode", $scope.curNode);
         $scope.gas.value = $scope.curNode.default_gasPrice;
-        console.log("$scope.gas.value", $scope.gas.value);
-        scope.setGasPrice();
+        //console.log("$scope.gas.value", $scope.gas.value);
+        $scope.setGasPrice();
 
         $rootScope.$broadcast("ChangeNode", key);
 
